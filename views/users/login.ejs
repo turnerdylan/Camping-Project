@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row flex-fill">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img class="card-img-top"
+                    src="https://res.cloudinary.com/dfzsgdkgj/image/upload/v1663264369/camp-app/_DSC9952_gf32c2.jpg"
+                    alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <form action="/login" class="validated-form" method="post" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="image">Username</label>
+                            <input class="form-control" type="text" id="username" name="username" autofocus
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                        </div>
+                        <button class="btn btn-success w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<!-- This file displays the view for creating a new campground -->
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Create New Campground</h1>
+        <div class="col-6 offset-3">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <form action="/campgrounds" method="post" novalidate class="validated-form"
+                        enctype="multipart/form-data">
+                        <!-- Title input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="title">Title</label>
+                            <input class="form-control" type="text" id="title" name="campground[title]" required>
+                        </div>
+                        <!-- Location input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="location">Location</label>
+                            <input class="form-control" type="text" id="location" name="campground[location]" required>
+                        </div>
+                        <!-- Price input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="price">Camp price</label>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="price label">$</span>
+                                <input type="text" class="form-control" id="price" name="campground[price]"
+                                    placeholder="0.00" aria-label="Price" aria-describedby="price label" required>
+                            </div>
+                        </div>
+                        <!-- Description input -->
+                        <div class="mb-3">
+                            <label class="form-label" for="description">Description</label>
+                            <textarea class="form-control" type="text" id="description" name="campground[description]"
+                                required></textarea>
+                        </div>
+                        <!-- Image input -->
+                        <div class="mb-3">
+                            <label for="images" class="form-label">Add images</label>
+                            <input class="form-control" name="image" type="file" id="images" multiple>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-success">Add campground</button>
+                        </div>
+                    </form>
+                    <div>
+                        <a href="/campgrounds">Back to all camps</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
