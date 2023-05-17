@@ -2,6 +2,8 @@ if(process.env.NODE_ENV !== "production"){              //if in dev mode, requir
     require('dotenv').config();
 }
 
+
+
 console.log(process.env.SECRET, process.env.PASSWORD);
 
 const express = require('express');                     //express app
@@ -17,6 +19,7 @@ const LocalStrategy = require('passport-local')
 const User = require('./models/user')
 const mongoSanitize = require('express-mongo-sanitize')
 const { default: helmet } = require('helmet');
+const {initializeApp} = require('firebase/app')
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/camp-app'
 //import external files
@@ -71,6 +74,18 @@ const sessionConfig = {
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDUzsOvGLgHQT7HVmUKQAUBHXUM1sQoWgY",
+    authDomain: "camping-project-f61b8.firebaseapp.com",
+    projectId: "camping-project-f61b8",
+    storageBucket: "camping-project-f61b8.appspot.com",
+    messagingSenderId: "1034421727443",
+    appId: "1:1034421727443:web:5c57450071fc9f3abc6426",
+    measurementId: "G-LYF1XSPGWQ"
+  };
+
+  const firebaseApp = initializeApp(firebaseConfig);
 
 //app.use for tools
 app.use(session(sessionConfig))
